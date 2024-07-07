@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicWin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <audio src="" id="audio-source"></audio>
+
+    <section class="home-section">
+        <div class="carousel">
+            <img src="assets/images/All_to_Whell.jpg" class="active" alt="All to Whell">
+            <img src="assets/images/Sour_grapes.jpeg" alt="Sour grapes">
+            <img src="assets/images/You_belong_with_me.webp" alt="You belong with me">
+            <img src="assets/images/Until_i_found_her.jpg" alt="Until I found You">
+
+        </div>
+        <h1 class="heading">Reproducido recientemente</h1>
+        <div class="playlist-group">
+            <div class="playlist-card">
+                <img src="assets/images/playlist.png" class="playlist-card-img" alt="All to Whell">
+                <p class="playlist-card-name">Kim</p>
+            </div>
+        </div>
+
+        <h1 class="heading">Tus favoritas</h1>
+        <div class="playlist-group">
+            <div class="playlist-card">
+                <img src="assets/images/playlist.png" class="playlist-card-img" alt="All to Whell">
+                <p class="playlist-card-name">Kim</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="music-player-section ">
+
+        <img src="assets/images/back.png" class="back-btn icon hide" alt="back">
+        <img src="assets/images/nav.png" class="nav-btn icon hide" alt="nav">
+
+
+        <h1 class="current-song-name">Cancion 1</h1>
+        <p class="artist-name hide">Kim</p>
+
+        <img src="assets/images/All_to_Whell.jpeg" class="cover hide" alt="All to Whell">
+
+        <div class="seek-bar-container">
+            <input type="range" class="music-seek-bar" value="0">
+            <p class="current-time hide">00:00</p>
+            <p class="duration hide">00:00</p>
+        </div>
+
+        <div class="controls">
+            <span class=" fas fa-redo"></span>
+            <div class="main">
+                <i class="fas fa-backward active"></i>
+                <i class="fas fa-play active"></i>
+                <i class="fas fa-pause"></i>
+                <i class="fas fa-forward active"></i>
+            </div>
+
+            <input type="range" class="volume-slider" max="1" value="1" step="0.1">
+            <span class=" fas fa-volume-up"></span>
+
+        </div>
+    </section>
+
+    <section class="playlist">
+
+        <img src="assets/images/back1.png" class="back-btn1 icon1" alt="back">
+
+        <h1 class="title">playlist</h1>
+        <div class="cubre">
+            <div class="queue">
+                <div class="queue-cover">
+                    <img src="assets/images/All_to_Whell.jpeg" alt="All to Whell">
+                    <i class="fas fa-pause"></i>
+                </div>
+                <p class="name">Cancion 1</p>
+
+            </div>
+
+            <div class="queue">
+                <div class="queue-cover">
+                    <img src="assets/images/Sour_grapes.jpeg" alt="Sour_grapes">
+                    <i class="fas fa-pause"></i>
+                </div>
+                <p class="name">Cancion 2</p>
+            </div>
+
+            <div class="queue">
+                <div class="queue-cover">
+                    <img src="assets/images/You_belong_with_me.jpeg" alt="You_belong_with_me">
+                    <i class="fas fa-pause"></i>
+                </div>
+                <p class="name">Cancion 3</p>
+
+            </div>
+
+            <div class="queue">
+                <div class="queue-cover">
+                    <img src="assets/images/Until_i_found_her.jpeg" alt="Until I found You">
+                    <i class="fas fa-pause"></i>
+                </div>
+                <p class="name">Cancion 4</p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -146,6 +146,10 @@ seekBar.addEventListener('change', () => {
     music.currentTime = seekBar.value;
 });
 
+music.addEventListener('ended', () => {
+    forwardBtn.click();
+});
+
 
 forwardBtn.addEventListener('click', () => {
     if(currentMusic >= songs.length -1){

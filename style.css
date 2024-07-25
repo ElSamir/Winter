@@ -134,8 +134,8 @@ body {
 
 .music-seek-bar::-webkit-slider-thumb{
     -webkit-appearance: none;
-    width: 5px;
     height: 10px;
+    width: 5px;
     background: var(--primary-color);
     cursor: pointer;
     box-shadow: -400px 0 0 400px var(--primary-color);

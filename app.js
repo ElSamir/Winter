@@ -114,9 +114,9 @@ const setMusic = (i) => {
     queue[currentMusic].classList.add('active');
 
 
-}
+};
 
-setMusic(1)
+setMusic(0)
 
 const formatTime = (time) => {
     let min = Math.floor(time / 60);
@@ -128,7 +128,7 @@ const formatTime = (time) => {
         sec = `0` + sec;
     }
     return `${min}:${sec}`;
-}
+};
 
 setInterval(() => { 
     seekBar.value = music.currentTime;
@@ -144,7 +144,7 @@ setInterval(() => {
 
 seekBar.addEventListener('change', () => {
     music.currentTime = seekBar.value;
-})
+});
 
 
 forwardBtn.addEventListener('click', () => {
@@ -155,7 +155,7 @@ forwardBtn.addEventListener('click', () => {
     }
  setMusic(currentMusic);
  playBtn.click();
-})
+});
 
 
 backwardBtn.addEventListener('click', () => {
@@ -166,22 +166,23 @@ backwardBtn.addEventListener('click', () => {
     }
  setMusic(currentMusic);
  playBtn.click();
-})
+});
 
 
 repeatBtn.addEventListener('click', () => {
     repeatBtn.classList.toggle('active');
 
-})
+});
 
 volumeBtn.addEventListener('click', () => {
     volumeBtn.classList.toggle('active');
     volumeSlider.classList.toggle('active');
-})
+});
 
 volumeSlider.addEventListener('input', () => {
-    music.volume = volumeSlider.value ;
-})
+    music.volume = volumeSlider.value;
+});
+
 
 queue.forEach((item,i) => {
     item.addEventListener('click', () => {

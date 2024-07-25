@@ -194,3 +194,58 @@ queue.forEach((item,i) => {
         playBtn.click();
     })
 })
+
+
+// Funciones para cookies
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {   
+    document.cookie = name + '=; Max-Age=-99999999;';  
+}
+
+// Funciones para almacenamiento local
+function saveMusicState() {
+    localStorage.setItem('currentMusic', currentMusic);
+    localStorage.setItem('currentTime', music.currentTime);
+}
+
+function loadMusicState() {
+    const savedMusic = localStorage.getItem('currentMusic');
+    const savedTime = localStorage.getItem('currentTime');
+
+    if (savedMusic !== null) {
+        currentMusic = parseInt(savedMusic, 10);
+        setMusic(currentMusic);
+        
+        if (savedTime !== null) {
+            music.currentTime = parseFloat(savedTime);
+        }
+        
+        playMusic();
+    }
+}
+
+// Llama a loadMusicState al cargar la página
+window.onload = loadMusicState;
+
+// Llama a saveMusicState cuando sea necesario
+window.addEventListener('beforeunload', saveMusicState);
